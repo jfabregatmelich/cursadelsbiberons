@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inici | Cursa dels Biberons</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- El navbar s'inserirà automàticament aquí via JS -->
+
+  <section class="hero">
+    <!-- Imatge de serra per davant amb parallax -->
+    <img src="images/serra.png" alt="serra" class="hero-serra">
+    
+    <!-- Partícules de fons animades -->
+    <div class="particles">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-sub">Trail · Natura · Muntanya</div>
+      <h1>Cursa dels <span>Biberons</span></h1>
+      <p>Una experiència esportiva espectacular al cor de la Terra Alta. Curses per a totes les edats.</p>
+
+      <div class="hero-buttons">
+        <a href="inscripcions.html" class="btn btn-primary">
+          <span>Inscriu-te</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="curses.html" class="btn btn-secondary">
+          <span>Veure curses</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Formes decoratives inferiors -->
+    <div class="hero-decoration">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#f5f7f5" d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">La Cursa</h2>
+      <p class="section-desc">Ambient espectacular, recorreguts únics i una identitat visual moderna amb tons blaus i verds inspirats directament en el logo.</p>
+
+      <div class="grid">
+        <!-- Primera targeta: Curses -->
+        <div class="card">
+          <a href="curses.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-image-wrapper">
+              <img src="images/cursa2.png" alt="curses">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <h3><i class="fas fa-running"></i> Modalitats de cursa</h3>
+              <p>Descobreix totes les modalitats: Absoluta, Júnior, Juvenil i Exprés. Troba la teva cursa ideal.</p>
+              <div class="card-link">Veure curses <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Segona targeta: Marxa -->
+        <div class="card">
+          <a href="marxa.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-image-wrapper">
+              <img src="images/cursa3.png" alt="marxa">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <h3><i class="fas fa-person-walking"></i> Marxa Popular</h3>
+              <p>Uneix-te a la caminada familiar de 13 km. Perfecte per gaudir de la natura amb tots els públics.</p>
+              <div class="card-link">Descobrir la Marxa <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Tercera targeta: Serveis -->
+        <div class="card">
+          <a href="serveis.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card-image-wrapper">
+              <img src="images/cursa4.png" alt="serveis">
+              <div class="card-image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <h3><i class="fas fa-concierge-bell"></i> Serveis i allotjament</h3>
+              <p>Tot el que necessites: avituallaments, pàrquing, càmping gratuït, dutxes i molt més.</p>
+              <div class="card-link">Veure serveis <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="layout.js"></script>
+</body>
+</html>
