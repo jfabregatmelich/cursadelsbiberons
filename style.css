@@ -43,7 +43,7 @@ a {
   margin: auto;
 }
 
-/* ========== 4. NAVBAR (totalment responsive amb hamburguesa) ========== */
+/* ========== 4. NAVBAR AMB MENÚ HAMBURGUESA ========== */
 .navbar {
   position: sticky;
   top: 0;
@@ -59,6 +59,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem 0;
+  position: relative;
 }
 
 .logo {
@@ -88,22 +89,38 @@ a {
   font-size: 0.75rem;
 }
 
-/* Menú hamburguesa (checkbox hack) */
-.nav-toggle {
+/* Botó hamburguesa - només visible en mòbil */
+.menu-toggle {
   display: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
 }
 
+.menu-toggle i {
+  font-size: 1.8rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.active i {
+  transform: rotate(90deg);
+}
+
+/* Checkbox ocult per controlar el menú */
+#menu-checkbox {
+  display: none;
+}
+
+/* Enllaços de navegació */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   list-style: none;
-  flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 
 .nav-links a {
@@ -124,11 +141,14 @@ a {
   font-weight: 700;
 }
 
-/* Responsive navbar: a partir de 900px es posa vertical */
+/* ========== ESTILS PER A MÒBIL (menys de 900px) ========== */
 @media (max-width: 900px) {
-  .nav-toggle {
+  /* Mostrem el botó hamburguesa */
+  .menu-toggle {
     display: block;
   }
+
+  /* Amaguem el menú inicialment */
   .nav-links {
     display: none;
     width: 100%;
@@ -136,32 +156,64 @@ a {
     align-items: stretch;
     gap: 0.5rem;
     margin-top: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
+
   .nav-links a {
     text-align: center;
     white-space: normal;
+    padding: 0.8rem 1rem;
   }
-  /* Quan es fa clic al toggle (cal afegir un checkbox al HTML) */
-  .nav-toggle:checked + .nav-links {
+
+  /* Quan el checkbox està marcat, mostrem el menú */
+  #menu-checkbox:checked ~ .nav-links {
     display: flex;
   }
-  /* Ajust manual per al teu HTML: hauràs d'afegir un <input type="checkbox"> just abans del .nav-links */
-  /* Si prefereixes no fer servir checkbox, pots mantenir el comportament anterior sense hamburguesa, però jo ho deixo preparat */
+
+  /* Ajust del logo en mòbil */
+  .nav-inner {
+    position: relative;
+  }
+  
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+  
+  .logo-text span {
+    font-size: 0.65rem;
+  }
+  
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
 }
 
-/* Per mantenir compatibilitat sense checkbox, forcem que a mòbil es mostri en columna */
-@media (max-width: 900px) {
-  .nav-inner {
-    flex-direction: column;
-    gap: 1rem;
+/* Pantalles molt petites (menys de 480px) */
+@media (max-width: 480px) {
+  .logo-text h1 {
+    font-size: 1rem;
   }
+  
+  .logo-text span {
+    font-size: 0.6rem;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu-toggle i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Pantalla gran (per sobre de 900px) sempre visible */
+@media (min-width: 901px) {
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .nav-links a {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
+    display: flex !important;
   }
 }
 
@@ -202,7 +254,6 @@ a {
   background: rgba(255,255,255,0.5);
   border-radius: 50%;
   animation: floatParticle 8s infinite ease-in-out;
-  box-shadow: 0 0 15px rgba(255,255,255,0.7), 0 0 30px rgba(143,192,162,0.4);
 }
 
 @keyframes floatParticle {
@@ -235,7 +286,6 @@ a {
   letter-spacing: 6px;
   font-size: 0.85rem;
   margin-bottom: 1rem;
-  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .hero h1 {
@@ -284,15 +334,13 @@ a {
 
 /* ========== 6. BOTONS ========== */
 .btn {
-  position: relative;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
   font-weight: 700;
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.35s ease;
   cursor: pointer;
   border: none;
 }
@@ -328,10 +376,6 @@ a {
   background: rgba(255,255,255,0.18);
   border-color: rgba(255,255,255,0.6);
   transform: translateY(-4px);
-}
-
-.btn-secondary:hover i {
-  transform: translateX(5px);
 }
 
 /* ========== 7. SECCIONS I TÍTOLS ========== */
@@ -385,7 +429,7 @@ a {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s ease;
 }
 
 .card:hover {
@@ -403,9 +447,6 @@ a {
   height: 240px;
   object-fit: cover;
   transition: transform 0.6s ease;
-  border: 3px solid var(--blue);
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .card:hover img {
@@ -418,7 +459,6 @@ a {
   background: linear-gradient(to top, rgba(31,49,92,0.5), transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
-  pointer-events: none;
 }
 
 .card:hover .card-image-overlay {
@@ -476,7 +516,6 @@ a {
   font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .acc-content {
@@ -487,6 +526,13 @@ a {
 
 .acc-item.active .acc-content {
   display: block;
+}
+
+.acc-content img {
+  border: 3px solid var(--blue);
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ========== 10. TIMELINE ========== */
@@ -572,23 +618,7 @@ footer {
   font-size: 0.85rem;
 }
 
-/* ========== 14. IMATGES DE RECORREGUT (borde i hover) ========== */
-.acc-content img,
-.card img[src*="recorregut"] {
-  border: 3px solid var(--blue);
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 100%;
-  height: auto;
-}
-
-.acc-content img:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-/* ========== 15. RESPONSIVE EXTRA (ajustos fins) ========== */
+/* ========== 14. RESPONSIVE EXTRA ========== */
 @media (max-width: 768px) {
   .hero-buttons .btn {
     padding: 0.6rem 1.2rem;
@@ -608,28 +638,12 @@ footer {
     text-align: center;
   }
 
-  .timeline {
-    margin-left: 1rem;
-    padding-left: 1.2rem;
-  }
-
   .info-banner {
     padding: 1.5rem;
-  }
-
-  .acc-btn {
-    font-size: 1rem;
-    padding: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .logo-text h1 {
-    font-size: 1.2rem;
-  }
-  .logo-text span {
-    font-size: 0.7rem;
-  }
   .hero h1 {
     letter-spacing: 2px;
   }
@@ -642,5 +656,3 @@ footer {
     padding: 0.5rem 1.2rem;
   }
 }
-
-/* Fi del CSS */

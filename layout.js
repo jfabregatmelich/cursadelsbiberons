@@ -1,4 +1,4 @@
-// Funció per crear el navbar
+// Funció per crear el navbar amb menú hamburguesa
 function crearNavbar() {
     return `
         <nav class="navbar">
@@ -10,6 +10,14 @@ function crearNavbar() {
                         <span>El Pinell de Brai · 2026</span>
                     </div>
                 </a>
+
+                <!-- Checkbox ocult per controlar el menú -->
+                <input type="checkbox" id="menu-checkbox">
+                
+                <!-- Botó hamburguesa -->
+                <label for="menu-checkbox" class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
 
                 <ul class="nav-links">
                     <li><a href="index.html">Inici</a></li>
@@ -63,6 +71,25 @@ function crearFooter() {
     `;
 }
 
+// Funció per canviar la icona del menú quan s'obre/tanca
+function initMenuIcon() {
+    const checkbox = document.getElementById('menu-checkbox');
+    const toggleLabel = document.getElementById('menu-toggle');
+    
+    if (checkbox && toggleLabel) {
+        checkbox.addEventListener('change', function() {
+            const icon = toggleLabel.querySelector('i');
+            if (this.checked) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+}
+
 // Funció per inserir navbar i footer al DOM
 function inserirComponents() {
     // Inserir navbar al principi del body
@@ -70,6 +97,9 @@ function inserirComponents() {
     
     // Inserir footer al final del body
     document.body.insertAdjacentHTML('beforeend', crearFooter());
+    
+    // Inicialitzar la icona del menú
+    initMenuIcon();
 }
 
 // Inicialitzar quan el DOM estigui llest
