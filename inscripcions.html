@@ -15,16 +15,16 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 1px;">
+<section class="section" style="padding-top: 2rem;">
   <div class="container">
     
     <!-- Missatge d'inscripcions tancades -->
-    <div class="info-banner" style="text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, #2c3e50, #1a1a2e);">
-      <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+    <div class="info-banner" style="text-align: center; margin-bottom: 2rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">
         <i class="fas fa-ban"></i> Inscripcions tancades
       </h2>
-      <p style="font-size: 1.2rem;">Les inscripcions per a l'edició 2026 ja han finalitzat. Et convidem a seguir-nos per a futures edicions.</p>
-      <p style="margin-top: 1rem;">
+      <p style="font-size: 1.1rem;">Les inscripcions per a l'edició 2026 ja han finalitzat.</p>
+      <p style="margin-top: 0.5rem;">
         <i class="fas fa-envelope"></i> cursadelsbiberons@gmail.com
       </p>
     </div>
@@ -36,82 +36,72 @@
           <i class="fas fa-info-circle"></i> Informació de la cursa
         </h2>
         
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <a href="curses.html" class="btn btn-primary" style="min-width: 180px;">
-            <i class="fas fa-running"></i> Modalitats de cursa
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <a href="curses.html" class="btn btn-primary" style="min-width: 160px;">
+            <i class="fas fa-running"></i> Modalitats
           </a>
-          <a href="marxa.html" class="btn btn-primary" style="min-width: 180px;">
-            <i class="fas fa-person-walking"></i> Marxa Popular
+          <a href="marxa.html" class="btn btn-secondary" style="min-width: 160px;">
+            <i class="fas fa-person-walking"></i> Marxa
           </a>
         </div>
         
-        <p style="margin-top: 1rem;">
-          <strong><i class="fas fa-calendar-alt"></i> Data:</strong> 01 de febrer de 2026
-        </p>
-        <p>
-          <strong><i class="fas fa-map-marker-alt"></i> Lloc:</strong> Cooperativa Agrícola del Pinell de Brai (Catedral del Vi)
-        </p>
-        <p>
-          <strong><i class="fas fa-hourglass-half"></i> Límit d'inscrits:</strong> 500 participants
-        </p>
+        <p><strong><i class="fas fa-calendar-alt"></i> Data:</strong> 01 de febrer de 2026</p>
+        <p><strong><i class="fas fa-map-marker-alt"></i> Lloc:</strong> Cooperativa Agrícola del Pinell de Brai</p>
+        <p><strong><i class="fas fa-hourglass-half"></i> Límit:</strong> 500 participants</p>
       </div>
     </div>
 
-    <!-- Preus de les modalitats -->
+    <!-- Preus de les modalitats (responsiu) -->
     <div class="card" style="margin-bottom: 2rem;">
       <div class="card-content" style="text-align: center;">
         <h2 style="color: var(--blue); margin-bottom: 1.5rem;">
           <i class="fas fa-tag"></i> Preus per modalitat
         </h2>
         
-        <!-- Primera fila: 3 modalitats -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 800px; margin: 0 auto 1rem auto;">
-          <div style="background: var(--light); padding: 1rem; border-radius: 16px; text-align: center;">
-            <i class="fas fa-crown" style="font-size: 1.8rem; color: var(--blue);"></i>
+        <!-- Grid de preus - automàtic: 3 a escriptori, 1 a mòbil -->
+        <div class="prices-grid">
+          <div class="price-card">
+            <i class="fas fa-crown"></i>
             <h4>Cursa Absoluta</h4>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--green);">25€</p>
+            <p>25€</p>
           </div>
-          <div style="background: var(--light); padding: 1rem; border-radius: 16px; text-align: center;">
-            <i class="fas fa-star" style="font-size: 1.8rem; color: var(--blue);"></i>
+          <div class="price-card">
+            <i class="fas fa-star"></i>
             <h4>Cursa Júnior</h4>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--green);">24€</p>
+            <p>24€</p>
           </div>
-          <div style="background: var(--light); padding: 1rem; border-radius: 16px; text-align: center;">
-            <i class="fas fa-leaf" style="font-size: 1.8rem; color: var(--blue);"></i>
+          <div class="price-card">
+            <i class="fas fa-leaf"></i>
             <h4>Cursa Juvenil</h4>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--green);">22€</p>
+            <p>22€</p>
           </div>
-        </div>
-        
-        <!-- Segona fila: 2 modalitats centrades -->
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; max-width: 600px; margin: 0 auto;">
-          <div style="background: var(--light); padding: 1rem; border-radius: 16px; text-align: center; flex: 1; min-width: 180px;">
-            <i class="fas fa-bolt" style="font-size: 1.8rem; color: var(--blue);"></i>
+          <div class="price-card">
+            <i class="fas fa-bolt"></i>
             <h4>Cursa Exprés</h4>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--green);">24€</p>
+            <p>24€</p>
           </div>
-          <div style="background: var(--light); padding: 1rem; border-radius: 16px; text-align: center; flex: 1; min-width: 180px;">
-            <i class="fas fa-person-walking" style="font-size: 1.8rem; color: var(--blue);"></i>
+          <div class="price-card">
+            <i class="fas fa-person-walking"></i>
             <h4>Marxa Popular</h4>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--green);">22€</p>
+            <p>22€</p>
           </div>
         </div>
         
         <!-- Assegurança -->
-        <div style="margin-top: 1.5rem; padding: 0.8rem; background: var(--blue-dark); color: white; border-radius: 16px; display: inline-block; width: auto; margin-left: auto; margin-right: auto;">
-          <p><strong><i class="fas fa-shield-alt"></i> No federats:</strong> +5€ assegurança temporal</p>
+        <div style="margin-top: 1.5rem; padding: 0.8rem; background: var(--blue-dark); color: white; border-radius: 16px; display: inline-block; width: auto;">
+          <p><strong><i class="fas fa-shield-alt"></i> No federats:</strong> +5€ assegurança</p>
         </div>
       </div>
     </div>
 
     <!-- Contacte final -->
-    <div class="info-banner" style="text-align: center; margin-top: 1rem;">
+    <div class="info-banner" style="text-align: center; margin-top: 0;">
       <h3><i class="fas fa-question-circle"></i> Més informació</h3>
       <p>Consulta els detalls de cada modalitat o posa't en contacte amb nosaltres.</p>
       
       <div class="hero-buttons" style="justify-content: center; margin-top: 1.5rem;">
-        <a href="curses.html" class="btn btn-primary"><i class="fas fa-running"></i> Veure curses</a>
-        <a href="marxa.html" class="btn btn-secondary"><i class="fas fa-person-walking"></i> Veure marxa</a>
+        <a href="curses.html" class="btn btn-primary"><i class="fas fa-running"></i> Curses</a>
+        <a href="marxa.html" class="btn btn-secondary"><i class="fas fa-person-walking"></i> Marxa</a>
         <a href="horaris.html" class="btn btn-secondary"><i class="fas fa-clock"></i> Horaris</a>
       </div>
       

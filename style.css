@@ -89,7 +89,7 @@ a {
   font-size: 0.75rem;
 }
 
-/* Botó hamburguesa - només visible en mòbil */
+/* Botó hamburguesa */
 .menu-toggle {
   display: none;
   background: none;
@@ -105,11 +105,7 @@ a {
   transition: transform 0.3s ease;
 }
 
-.menu-toggle.active i {
-  transform: rotate(90deg);
-}
-
-/* Checkbox ocult per controlar el menú */
+/* Checkbox ocult */
 #menu-checkbox {
   display: none;
 }
@@ -143,39 +139,46 @@ a {
 
 /* ========== ESTILS PER A MÒBIL (menys de 900px) ========== */
 @media (max-width: 900px) {
-  /* Mostrem el botó hamburguesa */
   .menu-toggle {
     display: block;
   }
 
-  /* Amaguem el menú inicialment */
   .nav-links {
     display: none;
     width: 100%;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
+    gap: 0.3rem;
     margin-top: 1rem;
     padding: 1rem 0;
     border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-links li {
+    width: 100%;
   }
 
   .nav-links a {
     text-align: center;
     white-space: normal;
     padding: 0.8rem 1rem;
+    display: block;
+    width: 100%;
   }
 
-  /* Quan el checkbox està marcat, mostrem el menú */
+  /* Separem millor el botó d'inscripcions */
+  .nav-links li:last-child {
+    margin-top: 0.3rem;
+  }
+
+  .nav-links li:last-child a {
+    background: linear-gradient(135deg, var(--green), var(--blue));
+  }
+
   #menu-checkbox:checked ~ .nav-links {
     display: flex;
   }
 
-  /* Ajust del logo en mòbil */
-  .nav-inner {
-    position: relative;
-  }
-  
   .logo-text h1 {
     font-size: 1.2rem;
   }
@@ -190,7 +193,13 @@ a {
   }
 }
 
-/* Pantalles molt petites (menys de 480px) */
+/* Pantalla gran */
+@media (min-width: 901px) {
+  .nav-links {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 480px) {
   .logo-text h1 {
     font-size: 1rem;
@@ -210,14 +219,7 @@ a {
   }
 }
 
-/* Pantalla gran (per sobre de 900px) sempre visible */
-@media (min-width: 901px) {
-  .nav-links {
-    display: flex !important;
-  }
-}
-
-/* ========== 5. HERO (amb parallax i partícules) ========== */
+/* ========== 5. HERO ========== */
 .hero {
   min-height: 92vh;
   position: relative;
@@ -326,12 +328,6 @@ a {
   line-height: 0;
 }
 
-.hero-wave svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 /* ========== 6. BOTONS ========== */
 .btn {
   display: inline-flex;
@@ -345,11 +341,6 @@ a {
   border: none;
 }
 
-.btn i {
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-}
-
 .btn-primary {
   background: linear-gradient(135deg, var(--green), var(--blue));
   color: white;
@@ -359,10 +350,6 @@ a {
 .btn-primary:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 35px rgba(79, 123, 99, 0.6);
-}
-
-.btn-primary:hover i {
-  transform: translateX(5px);
 }
 
 .btn-secondary {
@@ -453,18 +440,6 @@ a {
   transform: scale(1.05);
 }
 
-.card-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(31,49,92,0.5), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card:hover .card-image-overlay {
-  opacity: 1;
-}
-
 .card-content {
   padding: 1.8rem;
 }
@@ -473,23 +448,6 @@ a {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
   color: var(--blue-dark);
-}
-
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 700;
-  color: var(--green-dark);
-  margin-top: 1rem;
-  transition: gap 0.3s ease;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-}
-
-.card-link:hover {
-  gap: 0.8rem;
-  border-bottom-color: var(--green);
 }
 
 /* ========== 9. ACCORDIÓ ========== */
@@ -535,30 +493,7 @@ a {
   height: auto;
 }
 
-/* ========== 10. TIMELINE ========== */
-.timeline {
-  border-left: 3px solid var(--green);
-  margin-top: 2rem;
-  padding-left: 2rem;
-}
-
-.timeline-item {
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--blue);
-  position: absolute;
-  left: -2.65rem;
-  top: 4px;
-}
-
-/* ========== 11. PAGE HEADER ========== */
+/* ========== 10. PAGE HEADER ========== */
 .page-header {
   padding: 5rem 0 3rem;
   background: linear-gradient(rgba(18,28,40,0.8), rgba(18,28,40,0.8)), url('images/cursa2.png') center/cover;
@@ -572,7 +507,7 @@ a {
   letter-spacing: 3px;
 }
 
-/* ========== 12. INFO BANNER ========== */
+/* ========== 11. INFO BANNER ========== */
 .info-banner {
   background: linear-gradient(135deg, var(--green-dark), var(--blue-dark));
   color: white;
@@ -580,6 +515,52 @@ a {
   padding: 2rem;
   margin-top: 2rem;
   text-align: center;
+}
+
+/* ========== 12. PREUS (responsiu - 1 per fila a mòbil) ========== */
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* En mòbil: 1 columna, 5 files */
+@media (max-width: 768px) {
+  .prices-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+.price-card {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card i {
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.price-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--green);
 }
 
 /* ========== 13. FOOTER ========== */
@@ -626,6 +607,7 @@ footer {
   }
 
   .grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
@@ -641,18 +623,26 @@ footer {
   .info-banner {
     padding: 1.5rem;
   }
+  
+  .hero-sub {
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero h1 {
     letter-spacing: 2px;
   }
+  
   .hero-sub {
     letter-spacing: 3px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding: 0.3rem 1rem;
   }
+  
   .btn {
     padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
